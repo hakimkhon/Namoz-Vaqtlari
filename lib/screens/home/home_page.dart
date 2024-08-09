@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:namozvaqtlari/core/constants/const_sizes.dart';
 import 'package:namozvaqtlari/mocks/mock_data_region.dart';
+import 'package:namozvaqtlari/routes/all_routes.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class HomePage extends StatelessWidget {
@@ -31,6 +32,14 @@ class HomePage extends StatelessWidget {
               itemCount: MockDataRegion.regions.length,
               itemBuilder: (context, index) {
                 return ZoomTapAnimation(
+                  onTap: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      AllRoutesNames.myPage,
+                      (settings) => false,
+                      arguments: MockDataRegion.regions[index],
+                    );
+                  },
                   child: Container(
                     height: ConstSizes.height(5, context),
                     margin: const EdgeInsets.all(5),

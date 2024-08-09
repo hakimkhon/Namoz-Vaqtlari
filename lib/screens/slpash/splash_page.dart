@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Timer(
-      Duration(seconds: 3),
+      const Duration(seconds: 3),
       () {
         Navigator.pushNamedAndRemoveUntil(
             context, AllRoutesNames.home, (settings) => false);

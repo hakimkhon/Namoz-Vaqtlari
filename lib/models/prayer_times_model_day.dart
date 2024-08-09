@@ -1,36 +1,26 @@
-class NamozVaqtlariModel {
+class PrayerTimesModelDays {
     String? region;
-    int? regionNumber;
-    int? month;
-    int? day;
     DateTime? date;
-    HijriDate? hijriDate;
     String? weekday;
+    HijriDate? hijriDate;
     Times? times;
 
-    NamozVaqtlariModel({
+    PrayerTimesModelDays({
         this.region,
-        this.regionNumber,
-        this.month,
-        this.day,
         this.date,
-        this.hijriDate,
         this.weekday,
+        this.hijriDate,
         this.times,
     });
 
-    factory NamozVaqtlariModel.fromJson(Map<String, dynamic> json) => NamozVaqtlariModel(
+    factory PrayerTimesModelDays.fromJson(Map<String, dynamic> json) => PrayerTimesModelDays(
         region: json["region"],
-        regionNumber: json["regionNumber"],
-        month: json["month"],
-        day: json["day"],
         date: DateTime.parse(json["date"]),
-        hijriDate: HijriDate.fromJson(json["hijri_date"]),
         weekday: json["weekday"],
+        hijriDate: HijriDate.fromJson(json["hijri_date"]),
         times: Times.fromJson(json["times"]),
     );
 
- 
 }
 
 class HijriDate {
@@ -46,11 +36,6 @@ class HijriDate {
         month: json["month"],
         day: json["day"],
     );
-
-    Map<String, dynamic> toJson() => {
-        "month": month,
-        "day": day,
-    };
 }
 
 class Times {
@@ -78,5 +63,4 @@ class Times {
         shomIftor: json["shom_iftor"],
         hufton: json["hufton"],
     );
-
 }
