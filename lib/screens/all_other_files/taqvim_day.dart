@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:namozvaqtlari/models/prayer_times_model_day';
-import 'package:namozvaqtlari/services/api_service_day.dart';
+import 'package:namozvaqtlari/models/prayer_times_model_week.dart';
+import 'package:namozvaqtlari/services/api_service_week.dart';
 
 class MuslimTaqvimDay extends StatelessWidget {
   const MuslimTaqvimDay({super.key, required this.region});
@@ -9,8 +9,8 @@ class MuslimTaqvimDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: ApiServiceDay.getData(context, region),
-      builder: (context, AsyncSnapshot<List<PrayerTimesModelDay?>?> snapshot) {
+      future: ApiServiceWeek.getData(context, region),
+      builder: (context, AsyncSnapshot<List<PrayerTimesModelWeek?>?> snapshot) {
         if (!snapshot.hasData) {
           return const CircularProgressIndicator.adaptive();
         } else if (snapshot.hasError) {

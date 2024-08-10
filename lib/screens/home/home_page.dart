@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamedAndRemoveUntil(
                       context,
-                      AllRoutesNames.myPage,
+                      AllRoutesNames.stateless,
                       (settings) => false,
                       arguments: MockDataRegion.regions[index],
                     );

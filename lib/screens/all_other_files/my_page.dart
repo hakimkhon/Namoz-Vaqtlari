@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:namozvaqtlari/core/constants/const_sizes.dart';
-import 'package:namozvaqtlari/models/namoz_vaqtlari_model.dart';
 import 'package:namozvaqtlari/screens/main/widgets/buttons_time.dart';
 import 'package:namozvaqtlari/screens/main/widgets/left_right.dart';
 import 'package:namozvaqtlari/screens/main/widgets/location.dart';
-import 'package:namozvaqtlari/services/api_service_day.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({super.key, required this.regionName});
@@ -195,9 +193,17 @@ Column(
 
 
 
+
+
+
               
 
 
 
 
 */
+
+
+
+
+
