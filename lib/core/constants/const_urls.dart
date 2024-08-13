@@ -1,9 +1,9 @@
 class ConstUrls {
-  static String namozDay =
+  static String dailyUrl =
       "https://islomapi.uz/api/present/day?region="; //Toshkent
-  static String namozWeek =
+  static String weeklyUrl =
       "https://islomapi.uz/api/present/week?region="; //Toshkent
-  static String namozMonth =
+  static String monthlyUrl =
       "https://islomapi.uz/api/monthly?region="; //Toshkent&month=4
 
   static String urlApiNbu = "https://nbu.uz/exchange-rates/json/";

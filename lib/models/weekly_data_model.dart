@@ -1,11 +1,11 @@
-class PrayerTimesModelWeek {
+class WeeklyDataModel {
     String? region;
     String? date;
     HijriDate? hijriDate;
     String? weekday;
     Times? times;
 
-    PrayerTimesModelWeek({
+    WeeklyDataModel({
         this.region,
         this.date,
         this.hijriDate,
@@ -13,7 +13,7 @@ class PrayerTimesModelWeek {
         this.times,
     });
 
-    factory PrayerTimesModelWeek.fromJson(Map<String, dynamic> json) => PrayerTimesModelWeek(
+    factory WeeklyDataModel.fromJson(Map<String, dynamic> json) => WeeklyDataModel(
         region: json["region"],
         date: json["date"],
         hijriDate: HijriDate.fromJson(json["hijri_date"]),

@@ -1,34 +1,26 @@
-class PrayerTimesModelMonth {
+class DailyDataModel {
     String? region;
-    int? regionNumber;
-    int? month;
-    int? day;
     DateTime? date;
-    HijriDate? hijriDate;
     String? weekday;
+    HijriDate? hijriDate;
     Times? times;
 
-    PrayerTimesModelMonth({
+    DailyDataModel({
         this.region,
-        this.regionNumber,
-        this.month,
-        this.day,
         this.date,
-        this.hijriDate,
         this.weekday,
+        this.hijriDate,
         this.times,
     });
 
-    factory PrayerTimesModelMonth.fromJson(Map<String, dynamic> json) => PrayerTimesModelMonth(
+    factory DailyDataModel.fromJson(Map<String, dynamic> json) => DailyDataModel(
         region: json["region"],
-        regionNumber: json["regionNumber"],
-        month: json["month"],
-        day: json["day"],
         date: DateTime.parse(json["date"]),
-        hijriDate: HijriDate.fromJson(json["hijri_date"]),
         weekday: json["weekday"],
+        hijriDate: HijriDate.fromJson(json["hijri_date"]),
         times: Times.fromJson(json["times"]),
     );
+
 }
 
 class HijriDate {
@@ -72,4 +64,3 @@ class Times {
         hufton: json["hufton"],
     );
 }
-

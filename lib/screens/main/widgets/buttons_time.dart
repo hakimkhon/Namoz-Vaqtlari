@@ -3,7 +3,13 @@ import 'package:namozvaqtlari/core/constants/const_sizes.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class ButtonsTime extends StatelessWidget {
-  const ButtonsTime({super.key});
+  const ButtonsTime({
+    super.key,
+    required this.onTap,
+    required this.currentIndex,
+  });
+  final Function onTap;
+  final int currentIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -12,23 +18,23 @@ class ButtonsTime extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          myButton(context, "Day", Colors.green),
-          myButton(context, "Week", Colors.white),
-          myButton(context, "Month", Colors.white),
+          myButton(context, "Bugun", currentIndex ==1?  Colors.green : Colors.white, 1),
+          myButton(context, "Shu Xafta", currentIndex ==2?  Colors.green : Colors.white, 2),
+          myButton(context, "Oylik", currentIndex ==3?  Colors.green : Colors.white, 3),
         ],
       ),
     );
   }
 
-  myButton(context, String title, Color color) {
+  myButton(context, String title, Color color, int index) {
     return ZoomTapAnimation(
-      onTap: () {},
-      child: SizedBox(        
+      onTap: () {
+        onTap(index);
+      },
+      child: SizedBox(
         width: ConstSizes.width(30, context),
         height: ConstSizes.height(5, context),
-        // decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: color),
         child: Card(
-          
           color: color,
           child: Center(
             child: Text(

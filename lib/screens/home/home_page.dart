@@ -4,8 +4,20 @@ import 'package:namozvaqtlari/mocks/mock_data_region.dart';
 import 'package:namozvaqtlari/routes/all_routes.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<String> _foundSitys = [];
+  @override
+  void initState() {
+    _foundSitys = MockDataRegion.regions;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +27,33 @@ class HomePage extends StatelessWidget {
         // ),
         body: SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextField(
+          Padding(
+            padding: EdgeInsets.all(ConstSizes.width(3, context)),
+            child: const Text(
+              "Select a Country",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(ConstSizes.width(3, context)),
+            height: 60,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    blurRadius: 10,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(10)),
+            child: const TextField(
+              // onChanged: (value) => _runFilter(value),
               decoration: InputDecoration(
-                suffix: Icon(Icons.search),
-                labelText: "Search",
-                // icon: Icon(Icons.search),
+                labelText: 'Search',
+                suffixIcon: Icon(Icons.search),
               ),
             ),
           ),
@@ -35,7 +65,7 @@ class HomePage extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamedAndRemoveUntil(
                       context,
-                      AllRoutesNames.stateless,
+                      AllRoutesNames.mainPage,
                       (settings) => false,
                       arguments: MockDataRegion.regions[index],
                     );
@@ -61,5 +91,16 @@ class HomePage extends StatelessWidget {
         ],
       ),
     ));
+  }
+}
+
+void _runFilter(String enterKeyword) {
+  List<String> result = [];
+  if (enterKeyword.isEmpty) {
+    result = MockDataRegion.regions;
+  } else {
+    // result = MockDataRegion.regions.where(title){
+      
+    // } 
   }
 }

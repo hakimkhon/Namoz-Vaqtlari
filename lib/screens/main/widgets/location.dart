@@ -27,24 +27,24 @@ class LocationWidget extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
-            const Text(
-              "Safar 3",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+            // const Spacer(),
+            // const Text(
+            //   "Safar 3",
+            //   style: TextStyle(
+            //     fontSize: 24,
+            //     fontWeight: FontWeight.w700,
+            //   ),
+            // ),
           ],
         ),
         Container(
           padding: const EdgeInsets.all(2),
           width: double.infinity,
-          height: ConstSizes.height(25, context),
+          height: ConstSizes.height(20, context),
           color: Colors.grey,
           child: const Image(
             image: AssetImage(ImageAssets.swimmerImage),
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
           ),
         )
       ],
