@@ -12,10 +12,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> _foundSitys = [];
+  // List<String> _foundSitys = [];
   @override
   void initState() {
-    _foundSitys = MockDataRegion.regions;
+    // _foundSitys = MockDataRegion.regions;
     super.initState();
   }
 
@@ -94,13 +94,13 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-void _runFilter(String enterKeyword) {
-  List<String> result = [];
-  if (enterKeyword.isEmpty) {
-    result = MockDataRegion.regions;
-  } else {
-    // result = MockDataRegion.regions.where(title){
+// void _runFilter(String enterKeyword) {
+//   List<String> result = [];
+//   if (enterKeyword.isEmpty) {
+//     result = MockDataRegion.regions;
+//   } else {
+//     // result = MockDataRegion.regions.where(title){
       
-    // } 
-  }
-}
+//     // } 
+//   }
+// }

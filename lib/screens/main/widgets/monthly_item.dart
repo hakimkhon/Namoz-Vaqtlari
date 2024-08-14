@@ -4,15 +4,29 @@ import 'package:namozvaqtlari/models/monthly_data_model.dart';
 import 'package:namozvaqtlari/services/api_service.dart';
 
 class MonthlyItem extends StatelessWidget {
-  const MonthlyItem({super.key, required this.regionName, required this.month});
+  const MonthlyItem(
+      {super.key,
+      required this.regionName,
+      // required this.month,
+      required this.onTap});
   final String regionName;
-  final int month;
+  // final int month;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
+    onTap() {
+      showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2024),
+        lastDate: DateTime(2030),
+      );
+    }
+
     return Expanded(
       child: FutureBuilder(
-        future: ApiService.getMonthlyData(regionName, month),
+        future: ApiService.getMonthlyData(regionName, 3),
         builder: (context, AsyncSnapshot<List<MonthlyDataModel?>?> snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());

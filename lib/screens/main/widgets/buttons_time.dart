@@ -30,6 +30,7 @@ class ButtonsTime extends StatelessWidget {
     return ZoomTapAnimation(
       onTap: () {
         onTap(index);
+        // if(index==3){}
       },
       child: SizedBox(
         width: ConstSizes.width(30, context),
