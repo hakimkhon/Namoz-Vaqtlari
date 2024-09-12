@@ -1,10 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:namozvaqtlari/core/constants/const_sizes.dart';
 import 'package:namozvaqtlari/core/resources/asset_resources.dart';
-import 'package:namozvaqtlari/screens/main/calendar_page.dart';
-import 'package:namozvaqtlari/screens/main/widgets/base_alert_dialog.dart';
 import 'package:namozvaqtlari/screens/main/widgets/buttons_time.dart';
 import 'package:namozvaqtlari/screens/main/widgets/daily_item.dart';
 import 'package:namozvaqtlari/screens/main/widgets/location.dart';
@@ -20,16 +16,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  void _showDialog() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          print("showDialog ishladi");
-          return AlertDialog(
-            title: Text("Salom"),
-          );
-        });
-  }
 
   int mainIndex = 1;
   @override
@@ -49,22 +35,11 @@ class _MainPageState extends State<MainPage> {
               LocationWidget(regionName: widget.regionName),
               ButtonsTime(
                 currentIndex: mainIndex,
-                // onPressed: () {
-                //   _showDialog();
-                // },
                 onTap: (index) {
                   mainIndex = index;
-                  // if (index == 3) {
-                  //   // ignore: avoid_print
-                  //   _showDialog;
-                  //   // ignore: avoid_print
-                  //   print("oylik button bosildi");
-                  // }
                   setState(() {});
                 },
               ),
-
-              // const LeftRightWidget(),
               const Text(
                 NisoSurasi.oyat_103,
                 style: TextStyle(
